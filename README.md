@@ -39,7 +39,7 @@ The goal of this project is to reduce Kubernetes troubleshooting time by automat
 
 ## Investigation History
 
-<img width="1135" height="387" alt="image" src="https://github.com/user-attachments/assets/3f443083-4a6d-4740-baaf-405c61d2da74" />
+<img width="1133" height="285" alt="image" src="https://github.com/user-attachments/assets/9fb788bb-9289-43e2-a262-c868e794d720" />
 
 
 
