@@ -1,66 +1,271 @@
-# 01-prompt-project-setup.md
+# 01 - Foundation & Project Setup
 
 ## Context
 
-We are building an **AI Kubernetes Troubleshooting Agent**.
+We want to build an AI-powered Kubernetes troubleshooting platform.
 
-Architecture:
+The long-term vision is:
 
-Frontend
-↓
-FastAPI Backend (Orchestrator)
-↓
-Kubernetes Investigation Layer
-↓
-AI Kubernetes Agent
-↓
-LLM Reasoning (OpenRouter)
-↓
-Root Cause + Suggested Fix
-↓
-Frontend Diagnosis
+```text
+User
+   ↓
+Select Kubernetes Cluster
+   ↓
+Investigate Cluster
+   ↓
+Collect Kubernetes Evidence
+   ↓
+AI Root Cause Analysis
+   ↓
+Suggested Remediation
+   ↓
+Investigation History
+```
 
-This is an on-demand troubleshooting platform.
+The system should eventually support:
 
-Example flow:
+* Kubernetes cluster investigations
+* AI-powered Root Cause Analysis
+* Multi-cluster support
+* Authentication
+* Investigation history
+* Realtime updates
 
-User clicks "Investigate Cluster"
-↓
-Frontend API call
-↓
-Backend investigation
-↓
-AI reasoning
-↓
-Diagnosis returned
-↓
-Frontend displays results
-
-We are NOT building a Kubernetes Operator or Controller.
+However, in this first step we only want to establish the project foundation.
 
 ---
 
 ## Goal
 
-Set up the project foundation only.
+Create the initial project structure for:
+
+```text
+Frontend
+Backend
+Configuration
+Logging
+Docker Setup
+```
+
+The objective is to create a clean and scalable foundation.
+
+Do not implement Kubernetes investigation logic yet.
+
+Do not implement AI reasoning yet.
+
+---
+
+## Architecture
+
+```text
+Frontend (Next.js)
+        ↓
+FastAPI Backend
+        ↓
+Future Kubernetes Investigation Layer
+        ↓
+Future AI Layer
+```
+
+---
+
+## Requirements
+
+### Backend
+
+Use:
+
+* FastAPI
+* Pydantic Settings
+* Loguru
+* HTTPX
+
+Create a clean structure:
+
+```text
+backend/
+├── api/
+├── core/
+├── services/
+├── kubernetes/
+├── ai/
+├── models/
+├── main.py
+```
+
+Implement:
+
+* Health endpoint
+* Configuration management
+* Centralized logging
+* Environment variable loading
+
+Health endpoint:
+
+```http
+GET /health
+```
+
+Expected response:
+
+```json
+{
+  "status": "healthy",
+  "service": "ai-kubernetes-agent"
+}
+```
+
+---
+
+### Frontend
+
+Use:
+
+* Next.js
+* TypeScript
+* TailwindCSS
+
+Create a minimal landing page.
+
+Display:
+
+```text
+AI Kubernetes Agent
+
+[ Investigate Cluster ]
+```
+
+No functionality required yet.
+
+Only UI scaffolding.
+
+---
+
+### Configuration
+
+Support environment variables using:
+
+Backend:
+
+```env
+OPENROUTER_API_KEY=
+OPENROUTER_MODEL=
+KUBECONFIG_PATH=
+```
+
+Frontend:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=
+```
+
+---
+
+### Logging
+
+Implement centralized structured logging.
+
+Requirements:
+
+* Startup logs
+* Request logs
+* Error logs
+
+Use Loguru.
+
+---
+
+### Docker
 
 Create:
 
-* FastAPI backend
-* Next.js frontend
-* Docker setup
-* Environment configuration
-* Logging
-* Health endpoint
-* Basic folder structure
+```text
+Dockerfile
+docker-compose.yml
+```
+
+Services:
+
+```text
+frontend
+backend
+```
+
+Expose:
+
+```text
+Frontend → 3000
+Backend → 8000
+```
+
+---
+
+## Validation
+
+The following should work:
+
+### Backend
+
+```bash
+curl http://localhost:8000/health
+```
+
+Expected:
+
+```json
+{
+  "status": "healthy",
+  "service": "ai-kubernetes-agent"
+}
+```
+
+### Frontend
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Expected:
+
+```text
+AI Kubernetes Agent
+
+[ Investigate Cluster ]
+```
+
+---
+
+## Constraints
 
 Do NOT implement:
 
 * Kubernetes investigation
+* OpenRouter integration
 * AI reasoning
-* OpenRouter calls
 * Authentication
 * History
 * Realtime updates
 
-Only create the foundation.
+Only create the project foundation.
+
+Keep the implementation beginner-friendly and production-ready.
+
+---
+
+## Expected Result
+
+A developer should be able to:
+
+```text
+Clone Repository
+      ↓
+Run Docker Compose
+      ↓
+Open Frontend
+      ↓
+Call Health Endpoint
+```
+
+The project should now be ready for Kubernetes investigation features in the next prompt.
