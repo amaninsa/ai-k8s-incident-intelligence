@@ -1,0 +1,28 @@
+[project]
+name = "ai-kubernetes-agent-backend"
+version = "0.1.0"
+description = "FastAPI orchestrator for the AI Kubernetes Troubleshooting Agent"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic-settings>=2.6.0",
+    "loguru>=0.7.2",
+    "httpx>=0.28.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[tool.pyright]
+include = ["."]
+exclude = [".venv", "**/__pycache__", "**/.pytest_cache"]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

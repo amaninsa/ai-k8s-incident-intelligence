@@ -1,0 +1,499 @@
+# 🚀 AI Kubernetes Agent
+
+AI-powered Kubernetes Incident Intelligence Platform that automatically investigates Kubernetes clusters, correlates operational signals, and generates Root Cause Analysis (RCA) using Large Language Models.
+
+The goal of this project is to reduce Kubernetes troubleshooting time by automating evidence collection, analysis, and remediation recommendations.
+
+---
+
+# 📸 Screenshots
+
+## Login Page
+
+*Add Screenshot*
+
+## Dashboard
+
+*Add Screenshot*
+
+## Investigation Progress
+
+*Add Screenshot*
+
+## Root Cause Analysis
+
+*Add Screenshot*
+
+## Investigation History
+
+*Add Screenshot*
+
+---
+
+# 🏗 Architecture
+
+```text
+User
+ │
+ ▼
+Next.js Frontend
+ │
+ │ REST API + SSE
+ ▼
+FastAPI Backend (Orchestrator)
+ │
+ ├── Cluster Discovery
+ ├── Pod Analysis
+ ├── Event Analysis
+ ├── Deployment Analysis
+ ├── Log Collection
+ └── Network Analysis
+ │
+ ▼
+Evidence Correlation Engine
+ │
+ ▼
+OpenRouter
+(Qwen 3.7 Max)
+ │
+ ▼
+AI Root Cause Analysis
+ │
+ ▼
+Diagnosis + Remediation
+ │
+ ├── Investigation History
+ ├── Export System
+ └── Realtime Progress Updates
+ │
+ ▼
+Frontend Dashboard
+```
+
+---
+
+# 🔄 Investigation Flow
+
+```text
+Select Cluster
+      │
+      ▼
+Collect Kubernetes Evidence
+      │
+      ├── Pods
+      ├── Logs
+      ├── Events
+      ├── Deployments
+      └── Networking
+      │
+      ▼
+Evidence Correlation
+      │
+      ▼
+AI Reasoning Engine
+      │
+      ▼
+Root Cause Analysis
+      │
+      ▼
+Suggested Remediation
+      │
+      ▼
+Save Investigation History
+      │
+      ▼
+Display Results
+```
+
+---
+
+# ✨ Features
+
+### ☸️ Multi-Cluster Support
+
+Supports:
+
+* Kind Clusters
+* Amazon EKS
+* Multiple kubeconfig contexts
+
+Users can investigate any Kubernetes cluster available in their kubeconfig.
+
+---
+
+### 🤖 AI-Powered Root Cause Analysis
+
+Uses OpenRouter + Qwen 3.7 Max to:
+
+* Analyze Kubernetes evidence
+* Correlate operational signals
+* Generate Root Cause Analysis
+* Recommend fixes
+* Suggest kubectl troubleshooting commands
+
+---
+
+### ⚡ Realtime Investigation Progress
+
+Live investigation stages:
+
+* Checking Pods
+* Collecting Logs
+* Reading Events
+* Inspecting Deployments
+* Checking Networking
+* AI Reasoning
+* Root Cause Found
+
+Powered by Server-Sent Events (SSE).
+
+---
+
+### 🔐 Authentication & Security
+
+* User Registration
+* Login
+* Email OTP Verification
+* JWT Sessions
+* Protected Dashboard
+
+Powered by InsForge Authentication.
+
+---
+
+### 📚 Investigation History
+
+Stores:
+
+* Timestamp
+* Cluster
+* Root Cause
+* Confidence Score
+* Investigation Status
+
+Users can revisit previous investigations directly from the dashboard.
+
+---
+
+### 📄 Export Support
+
+Export investigations as:
+
+* JSON
+* Markdown
+* PDF
+
+---
+
+# ☸️ Supported Kubernetes Problems
+
+## Application Failures
+
+* CrashLoopBackOff
+* Restart Loops
+* Failed Startup
+* Readiness Probe Failures
+* Liveness Probe Failures
+
+---
+
+## Image Problems
+
+* ImagePullBackOff
+* ErrImagePull
+* Invalid Image Tags
+* Registry Authentication Failures
+
+---
+
+## Resource Problems
+
+* OOMKilled
+* CPU Starvation
+* Memory Pressure
+* Resource Exhaustion
+
+---
+
+## Networking Problems
+
+* CoreDNS Failures
+* DNS Resolution Issues
+* Service Connectivity Problems
+* Service Selector Mismatch
+
+---
+
+## Deployment Problems
+
+* Failed Rollouts
+* Replica Mismatch
+* Unavailable Replicas
+* Stuck Deployments
+
+---
+
+## Storage Problems
+
+* PVC Provisioning Failures
+* StorageClass Issues
+* Local Path Provisioner Failures
+
+---
+
+## Cluster Health Problems
+
+* Critical Warning Events
+* Node Instability
+* Cluster Connectivity Failures
+* Kubernetes API Access Issues
+
+---
+
+# 🛠 Tech Stack
+
+| Layer             | Technology                       |
+| ----------------- | -------------------------------- |
+| Frontend          | Next.js, TypeScript, TailwindCSS |
+| Backend           | FastAPI, Python                  |
+| AI Gateway        | OpenRouter                       |
+| LLM               | Qwen 3.7 Max                     |
+| Authentication    | InsForge Auth                    |
+| Database          | PostgreSQL (InsForge)            |
+| Realtime Updates  | Server-Sent Events (SSE)         |
+| Kubernetes Access | kubectl                          |
+| Cluster Types     | Kind, Amazon EKS                 |
+| Container Runtime | Docker                           |
+
+---
+
+# ⚙️ Installation & Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/<your-username>/ai-kubernetes-agent.git
+
+cd ai-kubernetes-agent
+```
+
+---
+
+## Backend Configuration
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+Update:
+
+```env
+OPENROUTER_API_KEY=<your-openrouter-key>
+OPENROUTER_MODEL=qwen/qwen3.7-max
+
+KUBECONFIG_PATH=~/.kube/config
+
+AUTH_ENABLED=true
+
+INSFORGE_URL=<your-insforge-url>
+```
+
+---
+
+## Frontend Configuration
+
+```bash
+cp frontend/.env.example frontend/.env.local
+```
+
+Update:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+
+NEXT_PUBLIC_INSFORGE_URL=<your-insforge-url>
+
+NEXT_PUBLIC_INSFORGE_ANON_KEY=<your-anon-key>
+
+NEXT_PUBLIC_AUTH_ENABLED=true
+```
+
+---
+
+# 🐳 Run with Docker Compose
+
+Start the complete application:
+
+```bash
+docker compose up --build
+```
+
+Services:
+
+| Service  | Port |
+| -------- | ---- |
+| Frontend | 3000 |
+| Backend  | 8000 |
+
+Application URLs:
+
+```text
+Frontend:
+http://localhost:3000
+
+Backend:
+http://localhost:8000
+
+Swagger:
+http://localhost:8000/docs
+```
+
+---
+
+# 💻 Run Locally
+
+## Backend
+
+```bash
+cd backend
+
+python -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload --port 8000
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Application URLs:
+
+```text
+Frontend:
+http://localhost:3000
+
+Backend:
+http://localhost:8000
+```
+
+---
+
+# ✅ Validation
+
+## Backend Health Check
+
+```bash
+curl http://localhost:8000/health
+```
+
+Expected:
+
+```json
+{
+  "status": "healthy",
+  "service": "ai-kubernetes-agent"
+}
+```
+
+---
+
+## Cluster Discovery
+
+```bash
+curl http://localhost:8000/clusters
+```
+
+Expected:
+
+```json
+[
+  "kind-kubernetes-demo-cluster",
+  "arn:aws:eks:..."
+]
+```
+
+---
+
+## Investigation
+
+```bash
+curl -X POST http://localhost:8000/investigate
+```
+
+Expected:
+
+```json
+{
+  "status": "success",
+  "diagnosis": {
+    "root_cause": "...",
+    "confidence": 85
+  }
+}
+```
+
+---
+
+# 📊 Example Diagnosis
+
+```text
+Root Cause:
+CoreDNS readiness probe timeout
+
+Explanation:
+CoreDNS pods are failing readiness checks due to DNS service instability.
+
+Suggested Fix:
+Restart the CoreDNS deployment and verify DNS connectivity.
+
+Command:
+kubectl rollout restart deployment coredns -n kube-system
+
+Confidence:
+84%
+```
+
+---
+
+# 🚀 Future Improvements
+
+* Prometheus Integration
+* Grafana Correlation
+* Slack Notifications
+* AI Incident Timeline
+* Kubernetes Recommendation Engine
+* Multi-Tenant Support
+* Automated Remediation Workflows
+* Alert Correlation Engine
+
+---
+
+# 👨‍💻 Author
+
+**Aman Vats**
+
+Cloud & DevOps Engineer
+
+Passionate about Kubernetes, Cloud Infrastructure, Platform Engineering, SRE, and AI-powered Operations.
+
+### Connect
+
+* LinkedIn: https://linkedin.com/in/<your-profile>
+* GitHub: https://github.com/<your-username>
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
+
