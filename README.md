@@ -506,6 +506,15 @@ Passionate about Kubernetes, Cloud Infrastructure, Platform Engineering, SRE, an
 * GitHub: https://github.com/amaninsa
 
 ---
+## Development Notes
 
+This project was developed using an AI-assisted engineering workflow combining:
+- Kubernetes troubleshooting expertise
+- Prompt engineering
+- FastAPI
+- Next.js
+- OpenRouter
+- InsForge
+  
 ⭐ If you found this project useful, consider giving it a star.
 
