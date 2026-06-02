@@ -10,7 +10,8 @@ The goal of this project is to reduce Kubernetes troubleshooting time by automat
 
 ## Login Page
 
-*Add Screenshot*
+<img width="1512" height="824" alt="image" src="https://github.com/user-attachments/assets/8dfab676-9875-4f40-a094-30f6fd43a94d" />
+
 
 ## Dashboard
 
