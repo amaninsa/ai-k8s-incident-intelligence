@@ -1,5 +1,13 @@
 # 🚀 AI Kubernetes Agent
 
+****## Why this project?
+
+Kubernetes troubleshooting often requires engineers to manually inspect pods, logs, events, deployments, networking, and cluster health signals.
+
+This project automates the investigation workflow by collecting Kubernetes evidence, correlating operational signals, and generating AI-powered Root Cause Analysis with remediation recommendations.****
+
+
+
 AI-powered Kubernetes Incident Intelligence Platform that automatically investigates Kubernetes clusters, correlates operational signals, and generates Root Cause Analysis (RCA) using Large Language Models.
 
 The goal of this project is to reduce Kubernetes troubleshooting time by automating evidence collection, analysis, and remediation recommendations.
@@ -46,42 +54,68 @@ The goal of this project is to reduce Kubernetes troubleshooting time by automat
 # 🏗 Architecture
 
 ```text
-User
- │
- ▼
-Next.js Frontend
- │
- │ REST API + SSE
- ▼
-FastAPI Backend (Orchestrator)
- │
- ├── Cluster Discovery
- ├── Pod Analysis
- ├── Event Analysis
- ├── Deployment Analysis
- ├── Log Collection
- └── Network Analysis
- │
- ▼
-Evidence Correlation Engine
- │
- ▼
-OpenRouter
-(Qwen 3.7 Max)
- │
- ▼
-AI Root Cause Analysis
- │
- ▼
-Diagnosis + Remediation
- │
- ├── Investigation History
- ├── Export System
- └── Realtime Progress Updates
- │
- ▼
-Frontend Dashboard
+
+```text
+┌─────────────────────┐
+│       User          │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  Next.js Frontend   │
+│  Dashboard + Auth   │
+└──────────┬──────────┘
+           │ REST API / SSE
+           ▼
+┌─────────────────────┐
+│  FastAPI Backend    │
+│   Orchestrator      │
+└──────────┬──────────┘
+           │
+           ├── Cluster Discovery
+           ├── Pod Analysis
+           ├── Event Analysis
+           ├── Deployment Analysis
+           ├── Log Collection
+           └── Network Analysis
+           │
+           ▼
+┌─────────────────────┐
+│ Evidence Correlation│
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ OpenRouter          │
+│ Qwen 3.7 Max        │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ AI Root Cause       │
+│ Analysis Engine     │
+└──────────┬──────────┘
+           │
+           ├── Diagnosis
+           ├── Remediation
+           ├── Exports
+           └── Realtime Updates
+           │
+           ▼
+┌─────────────────────┐
+│ InsForge            │
+│ Auth + PostgreSQL   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Investigation       │
+│ History Dashboard   │
+└─────────────────────┘
 ```
+
+
+
 
 ---
 
@@ -119,6 +153,12 @@ Display Results
 ```
 
 ---
+
+## Supported Clusters
+
+- Kind
+- Amazon EKS
+- Any cluster available through kubeconfig contexts
 
 # ✨ Features
 
@@ -285,7 +325,8 @@ Export investigations as:
 ## Clone Repository
 
 ```bash
-https://github.com/amaninsa/ai-k8s-incident-intelligence.git
+git clone https://github.com/amaninsa/ai-k8s-incident-intelligence.git
+
 cd ai-k8s-incident-intelligence
 ```
 
@@ -506,6 +547,19 @@ Passionate about Kubernetes, Cloud Infrastructure, Platform Engineering, SRE, an
 * GitHub: https://github.com/amaninsa
 
 ---
+
+## Highlights
+
+- Multi-cluster Kubernetes investigations
+- AI-powered Root Cause Analysis
+- Realtime investigation progress (SSE)
+- Authentication with Email OTP
+- Investigation History & Reports
+- JSON / Markdown / PDF exports
+- Docker & Local deployment support
+
+
+
 ## Development Notes
 
 This project was developed using an AI-assisted engineering workflow combining:
