@@ -285,9 +285,8 @@ Export investigations as:
 ## Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/ai-kubernetes-agent.git
-
-cd ai-kubernetes-agent
+https://github.com/amaninsa/ai-k8s-incident-intelligence.git
+cd ai-k8s-incident-intelligence
 ```
 
 ---
@@ -503,8 +502,8 @@ Passionate about Kubernetes, Cloud Infrastructure, Platform Engineering, SRE, an
 
 ### Connect
 
-* LinkedIn: https://linkedin.com/in/<your-profile>
-* GitHub: https://github.com/<your-username>
+* LinkedIn: https://www.linkedin.com/in/aman-vatsss/
+* GitHub: https://github.com/amaninsa
 
 ---
 
