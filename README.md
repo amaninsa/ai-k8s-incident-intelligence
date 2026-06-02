@@ -13,27 +13,34 @@ The goal of this project is to reduce Kubernetes troubleshooting time by automat
 <img width="1512" height="824" alt="image" src="https://github.com/user-attachments/assets/8dfab676-9875-4f40-a094-30f6fd43a94d" />
 
 
+
 ## Dashboard
 
 <img width="838" height="221" alt="image" src="https://github.com/user-attachments/assets/693ac04a-da3a-4942-9091-4d6958e2e08f" />
 <img width="849" height="521" alt="image" src="https://github.com/user-attachments/assets/172d1080-22ec-46d7-99ae-548b5b16e268" />
 
 
+
 ## Investigation Progress
 
 <img width="944" height="488" alt="image" src="https://github.com/user-attachments/assets/ecb8b74a-b00b-40d7-8070-b4266a65cbd2" />
-<img width="966" height="598" alt="image" src="https://github.com/user-attachments/assets/c3c68699-48f3-4984-9237-2be4a53b2e72" />
 <img width="1357" height="662" alt="image" src="https://github.com/user-attachments/assets/fb81813f-baea-46ae-8c32-6c934f763c3c" />
+<img width="966" height="598" alt="image" src="https://github.com/user-attachments/assets/c3c68699-48f3-4984-9237-2be4a53b2e72" />
+
 
 
 
 ## Root Cause Analysis
+<img width="1151" height="736" alt="image" src="https://github.com/user-attachments/assets/3466c54c-b16f-4bbf-9560-cf002f0ca46c" />
+<img width="1133" height="358" alt="image" src="https://github.com/user-attachments/assets/e5954f8e-5425-4d3c-96a8-385c8df6362b" />
+
 
 
 
 ## Investigation History
 
 <img width="1135" height="387" alt="image" src="https://github.com/user-attachments/assets/3f443083-4a6d-4740-baaf-405c61d2da74" />
+
 
 
 # 🏗 Architecture
